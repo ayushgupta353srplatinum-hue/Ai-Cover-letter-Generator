@@ -25,6 +25,6 @@ A web-based AI tool that generates professional cover letters based on user inpu
 ## YouTube Link
 
 ##  Home Page
-![Home Page Screenshot](./screenshots/homepage.png)
+![Home Page Screenshot](Week-4Screenshot.jpeg)
 
 
