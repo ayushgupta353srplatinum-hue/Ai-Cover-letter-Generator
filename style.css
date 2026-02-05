@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #1c207d, #8751bd, #5f79ee, #0fa9d3);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 520px;
+}
+
+.card {
+  backdrop-filter: blur(18px);
+  background: rgba(246, 239, 239, 0.15);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  color: #f1ebeb;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 6px;
+  font-size: 26px;
+}
+
+.tagline {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 28px;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(248, 241, 241, 0.9);
+  font-size: 14px;
+}
+
+.field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.field label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #4f4d4d;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.field input:focus + label,
+.field input:valid + label,
+.field textarea:focus + label,
+.field textarea:valid + label {
+  top: -8px;
+  left: 10px;
+  background: #f9f4f4;
+  padding: 0 6px;
+  font-size: 11px;
+  color: #333;
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f44724, #ed247e);
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.copy-btn {
+  margin-top: 12px;
+  background: linear-gradient(135deg, #00a4d1, #0574fb);
+}
+
+#loading {
+  display: none;
+  text-align: center;
+  margin: 14px 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+#output {
+  margin-top: 18px;
+  width: 100%;
+  min-height: 160px;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
