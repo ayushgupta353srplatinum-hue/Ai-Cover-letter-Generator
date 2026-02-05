@@ -18,15 +18,19 @@ Skills: ${skills}
 Tone: professional, clear, confident.
 `;
 
-  const res = await fetch("http://localhost:5000/generate", {
+  const res = await fetch("/api/generate", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({ prompt })
   });
 
   const result = await res.json();
 
-  document.getElementById("output").value = result.output;
+  document.getElementById("output").value =
+    result.output || "No response received.";
+
   document.getElementById("loading").style.display = "none";
 }
 
@@ -36,3 +40,4 @@ function copy() {
   document.execCommand("copy");
   alert("✅ Copied to clipboard!");
 }
+
