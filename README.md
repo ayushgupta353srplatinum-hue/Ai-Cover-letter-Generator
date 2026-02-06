@@ -22,7 +22,7 @@ A web-based AI tool that generates professional cover letters based on user inpu
    `npm start`
 
 ## YouTube Link
-
+https://youtu.be/mIp2Q_J78V4?si=89cNgEKWEDoKmoL7
 ##  Home Page
 ![Home Page Screenshot](Week-4Screenshot.jpeg)
 
