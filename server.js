@@ -5,11 +5,12 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-
 app.use(cors());
 app.use(express.json());
 
-app.post("/api/generate", async (req, res) => {
+const PORT = 5000;
+
+app.post("/generate", async (req, res) => {
   try {
     const { prompt } = req.body;
 
@@ -25,19 +26,24 @@ app.post("/api/generate", async (req, res) => {
       },
       body: JSON.stringify({
         model: "mistralai/mistral-7b-instruct",
-        messages: [{ role: "user", content: prompt }]
+        messages: [
+          { role: "user", content: prompt }
+        ]
       })
     });
 
     const data = await response.json();
 
     res.json({
-      output: data?.choices?.[0]?.message?.content || "No response"
+      output: data.choices[0].message.content
     });
 
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
     res.status(500).json({ error: "AI failed" });
   }
 });
-export default app;
+
+app.listen(PORT, () => {
+  console.log(`✅ Backend running on http://localhost:${PORT}`);
+});
