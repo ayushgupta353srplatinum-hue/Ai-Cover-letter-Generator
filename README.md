@@ -19,8 +19,7 @@ A web-based AI tool that generates professional cover letters based on user inpu
    `npm install`
 3. Create `.env` file and add your API key
 4. Run server  
-   `npm start`\
-## Live Demo Link
+   `npm start`
 
 ## YouTube Link
 
